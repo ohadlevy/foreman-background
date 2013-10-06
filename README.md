@@ -7,7 +7,7 @@ This is useful when you want to speed up foreman performance.
 
 You will need to install a redis instance to use this plugin.
 
-Note: Ruby 1.9 or newer is required.
+**Note: Ruby 1.9 or newer is required.**
 
 ## Configuration
 
@@ -25,7 +25,9 @@ Example config file:
 
 You would need to run sidekiq to actually process the background queue: for that execute:
 
+```
 sidekiq -q reports -q default
+```
 
 
 ## Currently implemented tasks
