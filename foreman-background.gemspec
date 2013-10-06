@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Adds background processing via sidekiq to foreman"
   s.description = "Adds background processing via sidekiq to foreman"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + [""Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'sidekiq'
