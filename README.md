@@ -1,4 +1,4 @@
-= ForemanBackground
+# ForemanBackground
 
 Adds background execution support for foreman (http://theforeman.org).
 
