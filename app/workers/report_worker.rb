@@ -4,7 +4,7 @@ class ReportWorker
 
   def perform(report)
     User.as :admin do
-      ReportImporter.import(report)
+      Report.import(report)
     end
   end
 

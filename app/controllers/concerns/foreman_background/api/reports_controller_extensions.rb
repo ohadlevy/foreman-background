@@ -1,8 +1,8 @@
 module ForemanBackground::API::ReportsControllerExtensions
   extend ActiveSupport::Concern
-   included do
-     alias_method_chain :create, :background
-   end
+  included do
+    alias_method_chain :create, :background
+  end
 
   def create_with_background
     if ReportWorker.redis_available?
