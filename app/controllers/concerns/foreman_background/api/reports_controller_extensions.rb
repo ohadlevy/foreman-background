@@ -5,8 +5,8 @@ module ForemanBackground::API::ReportsControllerExtensions
   end
 
   def create_with_background
-    if ReportWorker.redis_available?
-      ReportWorker.perform_async(params[:report])
+    if BaseWorker.redis_available?
+      ReportCreator.perform_async(params[:report])
       head :status => 202
     else
       logger.warn 'REDIS is not available, blocking until report processing is done.'

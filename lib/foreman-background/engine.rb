@@ -15,6 +15,7 @@ module ForemanBackground
     config.to_prepare do
       # Extend the report model
       ::Api::V2::ReportsController.send :include, ForemanBackground::API::ReportsControllerExtensions
+      ::Api::V1::HostsController.send :include, ForemanBackground::API::HostsControllerExtensions
     end
   end
 end
