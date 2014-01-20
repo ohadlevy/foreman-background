@@ -33,3 +33,4 @@ sidekiq -q reports -q default
 ## Currently implemented tasks
 
 * Reports import
+* Facts import
