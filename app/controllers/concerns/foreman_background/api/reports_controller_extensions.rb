@@ -7,12 +7,12 @@ module ForemanBackground::API::ReportsControllerExtensions
   def create_with_background
     if ReportWorker.redis_available?
       ReportWorker.perform_async(params[:report])
-      head :status => 202
+      head status: 202
     else
       logger.warn 'REDIS is not available, blocking until report processing is done.'
       create_without_background
     end
   rescue ::Foreman::Exception => e
-    render :json => {'message'=>e.to_s}, :status => :unprocessable_entity
+    render json: { 'message' => e.to_s }, status: :unprocessable_entity
   end
 end

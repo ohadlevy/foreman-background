@@ -1,6 +1,6 @@
 class ReportWorker
   include Sidekiq::Worker
-  sidekiq_options :queue => :reports, :retry => false, :backtrace => true
+  sidekiq_options queue: :reports, retry: false, backtrace: true
 
   def perform(report)
     User.as :admin do
@@ -19,5 +19,4 @@ class ReportWorker
     end
     redis_available
   end
-
 end
